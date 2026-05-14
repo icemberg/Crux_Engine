@@ -22,7 +22,7 @@ Crux Engine fills that gap with a constrained AI system. The system prompt force
 
 ## Live Demo
 
-Local only. See [Local Setup](#local-setup) to run it.
+🔗 **[crux-engine.netlify.app](https://crux-engine.netlify.app)** — no install needed, runs entirely in the browser.
 
 ---
 
