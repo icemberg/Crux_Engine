@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --color-surface: #0a0a0f;
+  --color-surface-raised: #12121a;
+  --color-surface-elevated: #1a1a25;
+  --color-border-subtle: #ffffff0d;
+  --color-border-default: #ffffff1a;
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #8888a0;
+  --color-text-muted: #55556a;
+  --color-accent: #6366f1;
+  --color-accent-glow: #6366f133;
+  --color-fact: #22c55e;
+  --color-fact-bg: #22c55e15;
+  --color-inference: #3b82f6;
+  --color-inference-bg: #3b82f615;
+  --color-prior: #f59e0b;
+  --color-prior-bg: #f59e0b15;
+  --color-vibe: #a855f7;
+  --color-vibe-bg: #a855f715;
+  --color-crux: #ef4444;
+  --color-crux-bg: #ef444412;
+  --color-crux-border: #ef444440;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+  }
+}
+
+/* Loading pulse animation */
+@keyframes crux-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.animate-crux-pulse {
+  animation: crux-pulse 2s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes crux-fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: crux-fade-in 0.5s ease-out forwards;
+}
+
+/* Staggered children */
+.stagger-children > * {
+  opacity: 0;
+  animation: crux-fade-in 0.4s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+
+/* Shimmer for loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 25%, #ffffff08 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
